@@ -45,6 +45,10 @@ string(TOLOWER "${PROJECT_NAME}" PROJECT_NAME_LOWER)
 set(TARGETS_EXPORT_NAME "${PROJECT_NAME_LOWER}-targets")
 #set(namespace "${PROJECT_NAME}::")
 
+# Enable C++11 and later
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 # Check if project is being used directly or via add_subdirectory
 set(CAMERA_MASTER_PROJECT OFF)
 if (CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
