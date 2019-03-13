@@ -177,7 +177,6 @@ namespace lima
             void getNbFrames(int& nb_frames);
 
             void getStatus(Camera::Status& status);
-            unsigned int getState();
 
             void checkRoi(const Roi& set_roi, Roi& hw_roi);
             void setRoi(const Roi& set_roi);

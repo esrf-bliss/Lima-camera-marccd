@@ -5,7 +5,7 @@ namespace Marccd
 // * \class Interface
 // * \brief Marccd hardware interface
 //*******************************************************************/
-class Interface : HwInterface
+class Interface  : HwInterface /NoDefaultCtors/
 {
 %TypeHeaderCode
 #include <MarccdInterface.h>

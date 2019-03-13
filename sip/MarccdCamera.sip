@@ -5,7 +5,7 @@ namespace Marccd
 // \brief object controlling the marccd detector through a socket
 //--------------------------------------------------------------------
 
-    class Camera 
+    class Camera /NoDefaultCtors/
     {
 %TypeHeaderCode
 #include <MarccdCamera.h>
@@ -26,11 +26,7 @@ namespace Marccd
     Camera(const std::string& camera_ip, 
            unsigned int port_number, 
            const std::string& img_path);
-
-    //Camera();
-    //Camera(const Marccd::Camera&);
     ~Camera();
-    //Camera& operator=(const Marccd::Camera&);
 
     void start();
     void stop();
@@ -61,7 +57,6 @@ namespace Marccd
     void getNbFrames(int& nb_frames /Out/);
 
     void getStatus(Marccd::Camera::Status& status /Out/);
-    unsigned int getState();
     
     void setBinning(const Bin&);
     void getBinning(Bin& /Out/);
