@@ -2,8 +2,8 @@ set(YAT_INCLUDE_DIRS)
 set(YAT_LIBRARIES)
 set(YAT_DEFINITIONS)
 
-find_path(YAT_INCLUDE_DIRS "yat/yat.h" /usr/local/include)
-find_library(YAT_LIB yat /usr/local/lib64)
+find_path(YAT_INCLUDE_DIRS "yat/yat.h")
+find_library(YAT_LIB yat)
 list(APPEND YAT_LIBRARIES ${YAT_LIB})
 
 include(FindPackageHandleStandardArgs)
