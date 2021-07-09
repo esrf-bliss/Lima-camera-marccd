@@ -42,9 +42,9 @@ Camera initialisation
 
 There are 4 parameters to be filled by your Lima client:
 
-	- The IPAddress of the host where the marccd server is running
-	- The port of the marccd server process
-	- The detector target path: the path where will be saved the marccd image files
+	- The IP address or hostname (ip_address tango property) of the host where the marccd server is running
+	- The port (port_number tango property) of the marccd server process
+	- The detector target path (image_path tango property): the path where will be saved the marccd image files
 	- Reader timeout: in ms, the timeout after which the plugin will be in fault if no marccd image file is present
 
 Std capabilities

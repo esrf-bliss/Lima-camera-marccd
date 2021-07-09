@@ -1,7 +1,7 @@
 ############################################################################
 # This file is part of LImA, a Library for Image Acquisition
 #
-# Copyright (C) : 2009-2011
+# Copyright (C) : 2009-2021
 # European Synchrotron Radiation Facility
 # BP 220, Grenoble 38043
 # FRANCE
@@ -69,14 +69,6 @@ class LimaMarccd(PyTango.Device_4Impl):
 #------------------------------------------------------------------
 #   
 #------------------------------------------------------------------
-#     @Core.DEB_MEMBER_FUNCT
-#     def getHeader(self, i):
-#         value = _MarccdInterface.getHeader()
-#         return str(type(value))
-    
-#------------------------------------------------------------------
-#   
-#------------------------------------------------------------------
     @Core.DEB_MEMBER_FUNCT
     def getCamState(self):
         return _MarccdInterface.getCamState()
@@ -88,20 +80,6 @@ class LimaMarccd(PyTango.Device_4Impl):
     def read_cam_state(self, attr):
         state = _MarccdInterface.getCamState()
         attr.set_value(state)
-    
-#     @Core.DEB_MEMBER_FUNCT
-#     def read_binning(self, attr):
-#         Id = _MarccdInterface.getBinning()
-#         attr.set_value(Id)
-    
-#     @Core.DEB_MEMBER_FUNCT
-#     def write_binning(self, attr):
-#         data = []
-#         attr.get_write_value(data)
-#         if (data[0] == 1):
-#             data[0] = 2;
-#         Id = data[0]
-#         _MarccdInterface.setBinning(Id)
     
     @Core.DEB_MEMBER_FUNCT
     def read_source_beam_x(self, attr):
@@ -279,30 +257,6 @@ class LimaMarccd(PyTango.Device_4Impl):
         attr.set_value(val)
         
 
-#     @Core.DEB_MEMBER_FUNCT
-#     def read_conf_file1(self, attr):
-#         self.__calfile1, self.__calfile2 = _MarccdInterface.getCalFiles()
-#         attr.set_value(self.__calfile1)
-    
-#     @Core.DEB_MEMBER_FUNCT
-#     def write_conf_file1(self, attr):
-#         data = []
-#         attr.get_write_value(data)
-#         self.__calfile1 = data[0]
-#         _MarccdInterface.setCalFiles(self.__calfile1, self.__calfile2)
-    
-#     @Core.DEB_MEMBER_FUNCT
-#     def read_conf_file2(self, attr):
-#         self.__calfile1, self.__calfile2 = _MarccdInterface.getCalFiles()
-#         attr.set_value(self.__calfile2)
-    
-#     @Core.DEB_MEMBER_FUNCT
-#     def write_conf_file2(self, attr):
-#         data = []
-#         attr.get_write_value(data)
-#         self.__calfile2 = data[0]
-#        _MarccdInterface.setCalFiles(self.__calfile1, self.__calfile2)
-    
 #==================================================================
 # MarccdClass class definition
 #==================================================================
@@ -449,7 +403,7 @@ from Lima import Marccd
 
 _MarccdInterface = None
 
-def get_control(camera_ip='bl04rayonix', port_number=2222, image_path='/buffer/rayonix', **keys) :
+def get_control(camera_ip='marccd1', port_number=2222, image_path='/buffer/rayonix', **keys) :
     global _MarccdInterface
     if _MarccdInterface is None:
         marccd = Marccd.Camera(camera_ip, port_number, image_path)
