@@ -22,7 +22,7 @@
 #  along with this program; if not, see <http://www.gnu.org/licenses/>.
 ############################################################################
 
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.10)
 
 project(marccd)
 
@@ -162,7 +162,7 @@ install(
 if(LIMA_ENABLE_PYTHON)
   install(
     DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/python/
-    DESTINATION "${PYTHON_SITE_PACKAGES_DIR}/Lima/Marccd"
+    DESTINATION "$<PATH:CMAKE_PATH,NORMALIZE,${Python3_SITEARCH}/Lima/Marccd>"
     )
   if (LIMA_ENABLE_PYTANGO_SERVER)
     add_subdirectory(tango)
