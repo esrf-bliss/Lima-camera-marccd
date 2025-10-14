@@ -20,7 +20,7 @@ requirements:
     - python {{ python }}
     - sip 4.19* # API v12.7
     - lima-core
-    - libyat 1.7.17
+    - libyat 1.21.3
   build:
     - ninja
     - cmake
